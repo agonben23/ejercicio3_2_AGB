@@ -5,12 +5,7 @@ class Persona(val nombre: String, val edad: Byte, val peso: Int, val altura: Dou
     private fun generaDNI(): String {
         val numDNI = Random.nextInt(0,99999999)
         val abc = arrayListOf<Char>('A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z')
-        var letrasDNI = ""
-        var i = 0
-        do {
-            letrasDNI += abc[Random.nextInt(0, 23)]
-            i++
-        }while (i != 3)
+        val letrasDNI = abc[Random.nextInt(0, 23)]
         return numDNI.toString() + letrasDNI
     }
 }
