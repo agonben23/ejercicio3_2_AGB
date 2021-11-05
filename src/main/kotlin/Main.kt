@@ -4,13 +4,18 @@ class Persona(val nombre: String, val edad: Byte,var sexo : Char, val peso: Int,
     init {
         comprobarSexo()
     }
-
-    val dni = generaDNI()
+    private var mayEdad : Boolean = false
+    private val dni = generaDNI()
     private fun comprobarSexo(){
         if (sexo != 'H' && sexo != 'M'){
             sexo = 'H'
         }
     }
+
+    fun esMayorDeEdad(){
+        mayEdad = edad >= 18
+    }
+
     fun calcularIMC() {
         val imc = (peso/(altura * altura))
 
